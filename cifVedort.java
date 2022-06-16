@@ -1,33 +1,24 @@
 import java.util.Scanner;
 /**
- * cifVedort
+ * tekSayiGireneKadar
  */
 public class cifVedort {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Sınır sayısına kadar olan sayılardan (4)'ün katları olan sayıları toplayalım :) .");
-        
-        int limitNum = input();
-        int sum =0;
-        for(int i = 1 ; i <= limitNum ; i++){
-            if(i%4==0) sum+=i;
-        }
-         System.out.println("toplam : "+ sum);
+        int m , toplam = 0;
+        do {
+            Scanner input = new Scanner(System.in);
+            System.out.println(" sayi Gir : " );
+            m = input.nextInt();
+            if ( m % 2 == 0 && m % 4 == 0){
 
-        scanner.close();
-    }
-    static int input(){
-        Scanner scanner = new Scanner(System.in);
-        try {
-            System.out.print("sınır sayısını giriniz : ");
-            int limitInput = scanner.nextInt();
-            return limitInput;
+                toplam +=m;
+                
+            }
+            
+        } while (m % 2 ==0);
+        System.out.println(" toplam =   " + toplam);
+       
 
-        } catch (Exception e) {
-            System.out.println("Rakam girmelisiniz !");
-            input();
-        }
-        scanner.close();
-        return 0;
     }
 }
